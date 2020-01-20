@@ -14,6 +14,7 @@ namespace rockPaperScissors
             int winCountUser = 0;
             int winCountComp = 0;
 
+            //Response from computer.
             List<string> opponentResponse = new List<string>();
             opponentResponse.Add("Rock");
             opponentResponse.Add("Paper");
