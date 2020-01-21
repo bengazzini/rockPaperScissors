@@ -8,7 +8,7 @@ namespace rockPaperScissors
         static void Main(string[] args)
         {
             string winner = "You win, winner!";
-            string loser = "Try again, loser!";
+            string loser = "Not today, loser!";
             var random = new Random();
             bool tryAgain = true;
             int winCountUser = 0;
@@ -36,32 +36,18 @@ namespace rockPaperScissors
                     {
                         Console.WriteLine("Draw! Try again!");
                     }
-                    if (userResponse == "rock" && actualResponse == "Paper")
+                    //lose game
+                    if (userResponse == "rock" && actualResponse == "Paper" ||
+                        userResponse == "paper" && actualResponse == "Scissors" ||
+                        userResponse == "scissors" && actualResponse == "Rock")
                     {
                         Console.WriteLine(loser);
                         winCountComp++;
                     }
-                    else if (userResponse == "rock" && actualResponse == "Scissors")
-                    {
-                        Console.WriteLine(winner);
-                        winCountUser++;
-                    }
-                    else if (userResponse == "paper" && actualResponse == "Scissors")
-                    {
-                        Console.WriteLine(loser);
-                        winCountComp++;
-                    }
-                    else if (userResponse == "paper" && actualResponse == "Rock")
-                    {
-                        Console.WriteLine(winner);
-                        winCountUser++;
-                    }
-                    else if (userResponse == "scissors" && actualResponse == "Rock")
-                    {
-                        Console.WriteLine(loser);
-                        winCountComp++;
-                    }
-                    else if (userResponse == "scissors" && actualResponse == "Paper")
+                    //win game
+                    else if (userResponse == "rock" && actualResponse == "Scissors" ||
+                        userResponse == "paper" && actualResponse == "Rock" ||
+                        userResponse == "scissors" && actualResponse == "Paper")
                     {
                         Console.WriteLine(winner);
                         winCountUser++;
