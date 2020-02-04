@@ -54,16 +54,19 @@ namespace rockPaperScissors
                     }
                     if (winCountUser == 3)
                     {
+                        Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("By Azura by Azura by Azura! You're the grand champion!");
                         tryAgain = false;
                     }
                     else if (winCountComp == 3)
                     {
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("Hang your head in shame, LOSER!");
                         tryAgain = false;
                     }
                 }
             } while (tryAgain == true && winCountComp < 3 || tryAgain == true && winCountUser < 3);
+            Console.ResetColor();
         }
     }
 }
